@@ -22,7 +22,6 @@ namespace Berzerk_2._0
         int robotNumber = 0;
         int xRobot = 0;
         int yRobot = 0;
-        int chance = 0;
 
         Random randGen = new Random();
 
@@ -125,12 +124,19 @@ namespace Berzerk_2._0
             #region Map Select
             if (xHero == 0 & yHero == 50)
             {
-                int chance = randGen.Next(1, 6);
+                int map = randGen.Next(1, 6);
             }
              if (xHero == 50 & yHero == 0)
             {
-                map = 2;
-
+                int map = randGen.Next(1, 6); 
+            }
+             if (xHero == 100 & yHero == 50)
+            {
+                int map = randGen.Next(1, 6);
+            }
+             if (xHero == 50 & yHero == 100)
+            {
+                int map = randGen.Next(1, 6);
             }
             #endregion
 

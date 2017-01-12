@@ -130,6 +130,7 @@ namespace Berzerk_2._0
              if (xHero == 50 & yHero == 0)
             {
                 map = 2;
+
             }
             #endregion
 

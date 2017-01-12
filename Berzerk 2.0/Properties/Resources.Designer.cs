@@ -83,6 +83,16 @@ namespace Berzerk_2._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap map1 {
+            get {
+                object obj = ResourceManager.GetObject("map1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PlayerTest {
             get {
                 object obj = ResourceManager.GetObject("PlayerTest", resourceCulture);
@@ -96,6 +106,16 @@ namespace Berzerk_2._0.Properties {
         internal static System.Drawing.Bitmap RightTest {
             get {
                 object obj = ResourceManager.GetObject("RightTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap robot1 {
+            get {
+                object obj = ResourceManager.GetObject("robot1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

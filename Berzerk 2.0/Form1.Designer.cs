@@ -42,7 +42,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(603, 375);
+            this.BackgroundImage = global::Berzerk_2._0.Properties.Resources.Map_1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(584, 411);
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";

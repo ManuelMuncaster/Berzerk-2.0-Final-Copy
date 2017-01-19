@@ -14,7 +14,7 @@ namespace Berzerk_2._0
     {
         int xHero = 100;
         int yHero = 200;
-        int speedHero = 2;
+        int speedHero = 4;
         int widthHero = 10;
         int heightHero = 20;
         int robotAI = 0;
@@ -22,6 +22,9 @@ namespace Berzerk_2._0
         int robotNumber = 0;
         int xRobot = 0;
         int yRobot = 0;
+        int heroPreset = 0;
+        int xHeroPreset = 0;
+        int yHeroPreset = 0;
 
         Random randGen = new Random();
 
@@ -83,7 +86,7 @@ namespace Berzerk_2._0
             gameTimer.Start();
 
             doorleftRec = new Rectangle(0, 192, 10, 70);
-            doorrightRec = new Rectangle(599, 190, 10, 70);
+            doorrightRec = new Rectangle(580, 190, 10, 70);
             doorupRec = new Rectangle(265, 0, 70, 10);
             doordownRec = new Rectangle(265, 448, 70, 10);
         }
@@ -129,100 +132,342 @@ namespace Berzerk_2._0
             }
 
             #endregion
-            // #region Map Select
+            #region Map Select
             heroRec = new Rectangle(xHero, yHero, widthHero, heightHero);
 
             if (heroRec.IntersectsWith(doorleftRec) && robotNumber == 0)
             {
                 int map = randGen.Next(1, 6);
+                int heroPreset = randGen.Next(1, 5);
 
                 if (map == 1)
                 {
                     this.BackgroundImage = Properties.Resources.Map_1;
-                    xHero = this.Width - widthHero;
-
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 240;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 240;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
                 }
                 else if (map == 2)
                 {
                     this.BackgroundImage = Properties.Resources.Map_2;
-                    xHero = this.Width - widthHero;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 240;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 240;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
                 }
                 else if (map == 3)
                 {
                     this.BackgroundImage = Properties.Resources.Map_3;
-                    xHero = this.Width - widthHero;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 240;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 240;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
                 }
                 else if (map == 4)
                 {
                     this.BackgroundImage = Properties.Resources.Map_4;
-                    xHero = this.Width - widthHero;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 240;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 240;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
                 }
                 else if (map == 5)
                 {
                     this.BackgroundImage = Properties.Resources.Map_5;
-                    xHero = this.Width - widthHero;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 240;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 240;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
                 }
             }
-            else if (heroRec.IntersectsWith(doorrightRec) && robotNumber == 0)
-            {
-                map = randGen.Next(1, 6);
-
+                  else if (heroRec.IntersectsWith(doorrightRec) && robotNumber == 0)
+                  {
+                      map = randGen.Next(1, 6);
+                      heroPreset = randGen.Next(1, 5);
                 if (map == 1)
                 {
                     this.BackgroundImage = Properties.Resources.Map_1;
-                    xHero = this.Width - widthHero;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 240;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 240;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
                 }
                 else if (map == 2)
                 {
                     this.BackgroundImage = Properties.Resources.Map_2;
-                    xHero = this.Width - widthHero;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 240;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 240;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
                 }
                 else if (map == 3)
                 {
                     this.BackgroundImage = Properties.Resources.Map_3;
-                    xHero = this.Width - widthHero; xHero = 0;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 240;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 240;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
                 }
                 else if (map == 4)
                 {
                     this.BackgroundImage = Properties.Resources.Map_4;
-                     xHero = this.Width - widthHero;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 240;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 240;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
                 }
                 else if (map == 5)
                 {
                     this.BackgroundImage = Properties.Resources.Map_5;
-                      xHero = this.Width - widthHero;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 182;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 140;
+                        yHeroPreset = 240;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 460;
+                        yHeroPreset = 240;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
                 }
             }
-            else if (heroRec.IntersectsWith(doorupRec) && robotNumber == 0)
-            {
-                map = randGen.Next(1, 6);
+                  else if (heroRec.IntersectsWith(doorupRec) && robotNumber == 0)
+                  {
+                      map = randGen.Next(1, 6);
 
-                if (map == 1)
-                {
-                    this.BackgroundImage = Properties.Resources.Map_1;
-                    yHero = this.Height - heightHero;
-                }
-                else if (map == 2)
-                {
-                    this.BackgroundImage = Properties.Resources.Map_2;
-                    yHero = this.Height - heightHero;
-                }
-                else if (map == 3)
-                {
-                    this.BackgroundImage = Properties.Resources.Map_3;
-                    yHero = this.Height - heightHero;
-                }
-                else if (map == 4)
-                {
-                    this.BackgroundImage = Properties.Resources.Map_4;
-                    yHero = this.Height - heightHero;
-                }
-                else if (map == 5)
-                {
-                    this.BackgroundImage = Properties.Resources.Map_5;
-                    yHero = this.Height - heightHero;
-                }
-            }
+                      if (map == 1)
+                      {
+                          this.BackgroundImage = Properties.Resources.Map_1;
+                          yHero = this.Height - heightHero;
+                      }
+                      else if (map == 2)
+                      {
+                          this.BackgroundImage = Properties.Resources.Map_2;
+                          yHero = this.Height - heightHero;
+                      }
+                      else if (map == 3)
+                      {
+                          this.BackgroundImage = Properties.Resources.Map_3;
+                          yHero = this.Height - heightHero;
+                      }
+                      else if (map == 4)
+                      {
+                          this.BackgroundImage = Properties.Resources.Map_4;
+                          yHero = this.Height - heightHero;
+                      }
+                      else if (map == 5)
+                      {
+                          this.BackgroundImage = Properties.Resources.Map_5;
+                          yHero = this.Height - heightHero;
+                      }
+
+                  }
+            #endregion
             Refresh();
         }
 

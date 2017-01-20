@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading;
 namespace Berzerk_2._0
 {
     public partial class Form1 : Form
@@ -30,7 +31,7 @@ namespace Berzerk_2._0
 
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown;
 
-        Rectangle heroRec, doorleftRec, doorrightRec, doorupRec, doordownRec;
+        Rectangle heroRec, doorleftRec, doorrightRec, doorupRec, doordownRec, wallLeft1, wallLeft2, wallTop1, wallTop2, wallRight1, wallRight2, wallDown1, wallDown2;
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -85,10 +86,13 @@ namespace Berzerk_2._0
             gameTimer.Enabled = true;
             gameTimer.Start();
 
-            doorleftRec = new Rectangle(0, 192, 10, 70);
+            doorleftRec = new Rectangle(0, 192, 10, 60);
             doorrightRec = new Rectangle(580, 190, 10, 70);
             doorupRec = new Rectangle(265, 0, 70, 10);
-            doordownRec = new Rectangle(265, 448, 70, 10);
+            doordownRec = new Rectangle(265, 430, 70, 10);
+
+            wallLeft1 = new Rectangle(0, 0, 10, 150);
+            wallLeft2 = new Rectangle(264, 0, 8, 264);
         }
 
         private void gameTimer_Tick(object sender, EventArgs e)
@@ -139,7 +143,7 @@ namespace Berzerk_2._0
             {
                 int map = randGen.Next(1, 6);
                 int heroPreset = randGen.Next(1, 5);
-
+            
                 if (map == 1)
                 {
                     this.BackgroundImage = Properties.Resources.Map_1;
@@ -147,23 +151,23 @@ namespace Berzerk_2._0
                     //Map 1, Map 2, Map 3, and Map 5 Player Spawns
                     if (heroPreset == 1)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 182;
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 2)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 182;
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 3)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 240;
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
                     }
                     else if (heroPreset == 4)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 240;
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
                     }
                     #endregion
                     xHero = xHeroPreset;
@@ -176,23 +180,23 @@ namespace Berzerk_2._0
                     //Map 1, Map 2, Map 3, and Map 5 Player Spawns
                     if (heroPreset == 1)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 182;
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 2)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 182;
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 3)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 240;
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
                     }
                     else if (heroPreset == 4)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 240;
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
                     }
                     #endregion
                     xHero = xHeroPreset;
@@ -205,23 +209,23 @@ namespace Berzerk_2._0
                     //Map 1, Map 2, Map 3, and Map 5 Player Spawns
                     if (heroPreset == 1)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 182;
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 2)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 182;
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 3)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 240;
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
                     }
                     else if (heroPreset == 4)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 240;
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
                     }
                     #endregion
                     xHero = xHeroPreset;
@@ -234,23 +238,23 @@ namespace Berzerk_2._0
                     //Map 1, Map 2, Map 3, and Map 5 Player Spawns
                     if (heroPreset == 1)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 182;
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 2)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 182;
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 3)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 240;
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
                     }
                     else if (heroPreset == 4)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 240;
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
                     }
                     #endregion
                     xHero = xHeroPreset;
@@ -263,33 +267,35 @@ namespace Berzerk_2._0
                     //Map 1, Map 2, Map 3, and Map 5 Player Spawns
                     if (heroPreset == 1)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 182;
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 2)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 182;
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 3)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 240;
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
                     }
                     else if (heroPreset == 4)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 240;
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
                     }
                     #endregion
                     xHero = xHeroPreset;
                     yHero = yHeroPreset;
                 }
+                Thread.Sleep(1500);
             }
-                  else if (heroRec.IntersectsWith(doorrightRec) && robotNumber == 0)
-                  {
-                      map = randGen.Next(1, 6);
-                      heroPreset = randGen.Next(1, 5);
+            else if (heroRec.IntersectsWith(doorrightRec) && robotNumber == 0)
+            {
+                map = randGen.Next(1, 6);
+                heroPreset = randGen.Next(1, 5);
+
                 if (map == 1)
                 {
                     this.BackgroundImage = Properties.Resources.Map_1;
@@ -297,23 +303,23 @@ namespace Berzerk_2._0
                     //Map 1, Map 2, Map 3, and Map 5 Player Spawns
                     if (heroPreset == 1)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 182;
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 2)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 182;
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 3)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 240;
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
                     }
                     else if (heroPreset == 4)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 240;
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
                     }
                     #endregion
                     xHero = xHeroPreset;
@@ -326,23 +332,23 @@ namespace Berzerk_2._0
                     //Map 1, Map 2, Map 3, and Map 5 Player Spawns
                     if (heroPreset == 1)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 182;
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 2)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 182;
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 3)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 240;
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
                     }
                     else if (heroPreset == 4)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 240;
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
                     }
                     #endregion
                     xHero = xHeroPreset;
@@ -355,23 +361,23 @@ namespace Berzerk_2._0
                     //Map 1, Map 2, Map 3, and Map 5 Player Spawns
                     if (heroPreset == 1)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 182;
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 2)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 182;
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 3)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 240;
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
                     }
                     else if (heroPreset == 4)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 240;
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
                     }
                     #endregion
                     xHero = xHeroPreset;
@@ -384,23 +390,23 @@ namespace Berzerk_2._0
                     //Map 1, Map 2, Map 3, and Map 5 Player Spawns
                     if (heroPreset == 1)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 182;
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 2)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 182;
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 3)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 240;
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
                     }
                     else if (heroPreset == 4)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 240;
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
                     }
                     #endregion
                     xHero = xHeroPreset;
@@ -413,63 +419,346 @@ namespace Berzerk_2._0
                     //Map 1, Map 2, Map 3, and Map 5 Player Spawns
                     if (heroPreset == 1)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 182;
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 2)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 182;
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
                     }
                     else if (heroPreset == 3)
                     {
-                        xHeroPreset = 140;
-                        yHeroPreset = 240;
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
                     }
                     else if (heroPreset == 4)
                     {
-                        xHeroPreset = 460;
-                        yHeroPreset = 240;
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
                     }
                     #endregion
                     xHero = xHeroPreset;
                     yHero = yHeroPreset;
                 }
+                Thread.Sleep(1500);
             }
-                  else if (heroRec.IntersectsWith(doorupRec) && robotNumber == 0)
-                  {
-                      map = randGen.Next(1, 6);
+            else if (heroRec.IntersectsWith(doorupRec) && robotNumber == 0)
+            {
+                int map = randGen.Next(1, 6);
+                int heroPreset = randGen.Next(1, 5);
 
-                      if (map == 1)
-                      {
-                          this.BackgroundImage = Properties.Resources.Map_1;
-                          yHero = this.Height - heightHero;
-                      }
-                      else if (map == 2)
-                      {
-                          this.BackgroundImage = Properties.Resources.Map_2;
-                          yHero = this.Height - heightHero;
-                      }
-                      else if (map == 3)
-                      {
-                          this.BackgroundImage = Properties.Resources.Map_3;
-                          yHero = this.Height - heightHero;
-                      }
-                      else if (map == 4)
-                      {
-                          this.BackgroundImage = Properties.Resources.Map_4;
-                          yHero = this.Height - heightHero;
-                      }
-                      else if (map == 5)
-                      {
-                          this.BackgroundImage = Properties.Resources.Map_5;
-                          yHero = this.Height - heightHero;
-                      }
+                if (map == 1)
+                {
+                    this.BackgroundImage = Properties.Resources.Map_1;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
+                }
+                else if (map == 2)
+                {
+                    this.BackgroundImage = Properties.Resources.Map_2;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
+                }
+                else if (map == 3)
+                {
+                    this.BackgroundImage = Properties.Resources.Map_3;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
+                }
+                else if (map == 4)
+                {
+                    this.BackgroundImage = Properties.Resources.Map_4;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
+                }
+                else if (map == 5)
+                {
+                    this.BackgroundImage = Properties.Resources.Map_5;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
+                }
+                Thread.Sleep(1500);
+            }
+            else if (heroRec.IntersectsWith(doordownRec) && robotNumber == 0)
+            {
+                int map = randGen.Next(1, 6);
+                int heroPreset = randGen.Next(1, 5);
 
-                  }
+                if (map == 1)
+                {
+                    this.BackgroundImage = Properties.Resources.Map_1;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
+                }
+                else if (map == 2)
+                {
+                    this.BackgroundImage = Properties.Resources.Map_2;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
+                }
+                else if (map == 3)
+                {
+                    this.BackgroundImage = Properties.Resources.Map_3;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
+                }
+                else if (map == 4)
+                {
+                    this.BackgroundImage = Properties.Resources.Map_4;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
+                }
+                else if (map == 5)
+                {
+                    this.BackgroundImage = Properties.Resources.Map_5;
+                    #region Player Presets  
+                    //Map 1, Map 2, Map 3, and Map 5 Player Spawns
+                    if (heroPreset == 1)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 2)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 46;
+                    }
+                    else if (heroPreset == 3)
+                    {
+                        xHeroPreset = 46;
+                        yHeroPreset = 303;
+                    }
+                    else if (heroPreset == 4)
+                    {
+                        xHeroPreset = 504;
+                        yHeroPreset = 303;
+                    }
+                    #endregion
+                    xHero = xHeroPreset;
+                    yHero = yHeroPreset;
+                }
+                Thread.Sleep(1500);
+            }
+            #endregion
+            #region Wall Collision
+            if (heroRec.IntersectsWith(wallLeft1))
+            {
+                xHero++;
+
+            }
+
             #endregion
             Refresh();
-        }
+            }
+       
 
 
 

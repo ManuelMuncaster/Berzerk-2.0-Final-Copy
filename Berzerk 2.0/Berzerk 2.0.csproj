@@ -102,6 +102,9 @@
     <None Include="Resources\robot1.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Berzerk 2.0 Screen Shots.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Map 1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -111,13 +114,13 @@
     <None Include="Resources\Map 3.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Map 4.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Map 5.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Berzerk 2.0 Screen Shots.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Map 4.png" />
+    <None Include="Resources\lifeIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

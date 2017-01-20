@@ -89,7 +89,7 @@ namespace Berzerk_2._0
             doorleftRec = new Rectangle(0, 192, 10, 60);
             doorrightRec = new Rectangle(580, 190, 10, 70);
             doorupRec = new Rectangle(265, 0, 70, 10);
-            doordownRec = new Rectangle(265, 430, 70, 10);
+            doordownRec = new Rectangle(265, 400, 70, 10);
 
             wallLeft1 = new Rectangle(0, 0, 10, 150);
             wallLeft2 = new Rectangle(264, 0, 8, 264);

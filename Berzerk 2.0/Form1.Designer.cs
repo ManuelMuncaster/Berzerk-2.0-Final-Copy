@@ -33,8 +33,10 @@
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.life1 = new System.Windows.Forms.PictureBox();
             this.life2 = new System.Windows.Forms.PictureBox();
+            this.life3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.life1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.life2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life3)).BeginInit();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -62,6 +64,16 @@
             this.life2.TabIndex = 1;
             this.life2.TabStop = false;
             // 
+            // life3
+            // 
+            this.life3.BackgroundImage = global::Berzerk_2._0.Properties.Resources.lifeIcon;
+            this.life3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.life3.Location = new System.Drawing.Point(145, 420);
+            this.life3.Name = "life3";
+            this.life3.Size = new System.Drawing.Size(32, 40);
+            this.life3.TabIndex = 2;
+            this.life3.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -70,6 +82,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(584, 461);
+            this.Controls.Add(this.life3);
             this.Controls.Add(this.life2);
             this.Controls.Add(this.life1);
             this.DoubleBuffered = true;
@@ -80,6 +93,7 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.life1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.life2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -89,6 +103,7 @@
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.PictureBox life1;
         private System.Windows.Forms.PictureBox life2;
+        private System.Windows.Forms.PictureBox life3;
     }
 }
 

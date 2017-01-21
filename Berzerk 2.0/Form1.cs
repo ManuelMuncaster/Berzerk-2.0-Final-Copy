@@ -79,6 +79,8 @@ namespace Berzerk_2._0
 
         //create graphic objects
         SolidBrush drawBrush = new SolidBrush(Color.Black);
+        SolidBrush blueBrush = new SolidBrush(Color.Cyan);
+        Font drawFont = new Font("Courier", 16, FontStyle.Bold);
 
         public Form1()
         {
@@ -765,6 +767,7 @@ namespace Berzerk_2._0
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImage(Properties.Resources.PlayerTest, xHero, yHero, 30, 30);
+            e.Graphics.DrawString("00000000", drawFont, blueBrush, 425, 420);
 
             #region Character Direction
 

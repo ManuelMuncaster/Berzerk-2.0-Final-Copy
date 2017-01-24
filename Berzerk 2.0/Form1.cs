@@ -21,15 +21,23 @@ namespace Berzerk_2._0
         int robotAI = 0;
         int map = 0;
         int robotNumber = 0;
-        int xRobot = 0;
-        int yRobot = 0;
+        int xRobot1 = -50;
+        int yRobot1 = -500;
+        int xRobot2 = -50;
+        int yRobot2 = -500;
+        int xRobot3 = -50;
+        int yRobot3 = -500;
         int heroPreset = 0;
         int xHeroPreset = 0;
         int yHeroPreset = 0;
-
+        int robotPreset = 0;
+        int yrobotPreset = 0;
+        int xrobotPreset = 0;
+        int xLaser = 0;
+        int yLaser = 0;
         Random randGen = new Random();
 
-        Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown;
+        Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown, spaceDown;
 
         Rectangle heroRec, doorleftRec, doorrightRec, doorupRec, doordownRec, wallLeft1, wallLeft2, wallTop1, wallTop2, wallRight1, wallRight2, wallDown1, wallDown2;
 
@@ -48,6 +56,9 @@ namespace Berzerk_2._0
                     break;
                 case Keys.Up:
                     upArrowDown = true;
+                    break;
+                case Keys.Space:
+                    spaceDown = true;
                     break;
                 default:
                     break;
@@ -69,6 +80,9 @@ namespace Berzerk_2._0
                     break;
                 case Keys.Up:
                     upArrowDown = false;
+                    break;
+                case Keys.Space:
+                    spaceDown = false;
                     break;
                 default:
                     break;
@@ -102,7 +116,7 @@ namespace Berzerk_2._0
             int xtemp = xHero;
             int ytemp = yHero;
 
-            #region move character based on key presses
+            #region Move character based on key presses
 
             if (leftArrowDown == true)
             {
@@ -134,6 +148,7 @@ namespace Berzerk_2._0
             #region Robot AI
             if (robotAI == 1)
             {
+             
 
             }
 
@@ -758,6 +773,143 @@ namespace Berzerk_2._0
             }
 
             #endregion
+            #region Robot Spawn
+            if (map == 1)
+            {
+                int robotNumber = randGen.Next(1, 4);
+
+                if (robotNumber == 1)
+                {
+                    xRobot1 = 214;
+                    yRobot1 = 166; 
+
+                }
+                else if (robotNumber == 2)
+                {
+                    xRobot1 = 214;
+                    yRobot1 = 166;
+                    xRobot2 = 390;
+                    yRobot2 = 166;
+                }
+                else if (robotNumber == 3)
+                {
+                    xRobot1 = 214;
+                    yRobot1 = 166;
+                    xRobot2 = 390;
+                    yRobot2 = 166;
+                    xRobot3 = 300;
+                    yRobot3 = 345;
+
+                }
+
+            }
+            else if (map == 2)
+            {
+                int robotNumber = randGen.Next(1, 4);
+
+                if (robotNumber == 1)
+                {
+                    xRobot1 = 240;
+                    yRobot1 = 165;
+                }
+                else if (robotNumber == 2)
+                {
+                    xRobot1 = 240;
+                    yRobot1 = 165;
+                    xRobot2 = 380;
+                    yRobot2 = 165;
+                }
+                else if (robotNumber == 3)
+                {
+                    xRobot1 = 240;
+                    yRobot1 = 165;
+                    xRobot2 = 380;
+                    yRobot2 = 165;
+                    xRobot3 = 300;
+                    yRobot3 = 400;
+                }
+
+            }
+            else if (map == 3)
+            {
+                int robotNumber = randGen.Next(1, 4);
+
+                if (robotNumber == 1)
+                {
+                    xRobot1 = 170;
+                    yRobot1 = 225;
+                }
+                else if (robotNumber == 2)
+                {
+                    xRobot1 = 170;
+                    yRobot1 = 225;
+                    xRobot2 = 470;
+                    yRobot2 = 225;
+                }
+                else if (robotNumber == 3)
+                {
+                    xRobot1 = 170;
+                    yRobot1 = 225;
+                    xRobot2 = 470;
+                    yRobot2 = 225;
+                    xRobot3 = 300;
+                    yRobot3 = 225;
+                }
+            }
+            else if (map == 4)
+            {
+                int robotNumber = randGen.Next(1, 4);
+
+                if (robotNumber == 1)
+                {
+                    xRobot1 = 200;
+                    yRobot1 = 225;
+                }
+                else if (robotNumber == 2)
+                {
+                    xRobot1 = 200;
+                    yRobot1 = 225;
+                    xRobot2 = 300;
+                    yRobot2 = 100;
+                }
+                else if (robotNumber == 3) ;
+                {
+                    xRobot1 = 200;
+                    yRobot1 = 225;
+                    xRobot2 = 300;
+                    yRobot2 = 100;
+                    xRobot3 = 450;
+                    yRobot3 = 225;
+                }
+            }
+            else if (map == 5)
+            {
+                int robotNumber = randGen.Next(1, 4);
+
+                if (robotNumber == 1)
+                {
+                    xRobot1 = 300;
+                    yRobot1 = 165;
+                }
+                else if (robotNumber == 2)
+                {
+                    xRobot1 = 300;
+                    yRobot1 = 165;
+                    xRobot2 = 300;
+                    yRobot2 = 275;
+                }
+                else if (robotNumber == 3)
+                {
+                    xRobot1 = 300;
+                    yRobot1 = 165;
+                    xRobot2 = 300;
+                    yRobot2 = 275;
+                    xRobot3 = 150;
+                    yRobot3 = 225;
+                }
+
+            }
+            #endregion
             Refresh();
             }
        
@@ -767,6 +919,10 @@ namespace Berzerk_2._0
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImage(Properties.Resources.PlayerTest, xHero, yHero, 30, 30);
+            e.Graphics.DrawImage(Properties.Resources.robot, xRobot1, yRobot1, 30, 30);
+            e.Graphics.DrawImage(Properties.Resources.robot, xRobot2, yRobot2, 30, 30);
+            e.Graphics.DrawImage(Properties.Resources.laserUp, xLaser, yLaser, 5, 5);
+            e.Graphics.DrawImage(Properties.Resources.robot, xRobot3, yRobot3, 30, 30);
             e.Graphics.DrawString("00000000", drawFont, blueBrush, 425, 420);
 
             #region Character Direction
@@ -790,6 +946,20 @@ namespace Berzerk_2._0
             {
                 e.Graphics.DrawImage(Properties.Resources.DownTest, xHero, yHero, 30, 30);
             }
+            #endregion
+            #region Player Shooting
+            if (spaceDown == true)
+            {
+                xLaser = xHero;
+                yLaser = yHero;
+                while (yLaser < 1000)
+                {
+                    yLaser++;
+                    e.Graphics.DrawImage(Properties.Resources.laserUp, xLaser, yLaser, 5, 5);
+                }
+                
+            }
+            
             #endregion
 
         }

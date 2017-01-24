@@ -26,6 +26,7 @@ namespace Berzerk_2._0
         int heroPreset = 0;
         int xHeroPreset = 0;
         int yHeroPreset = 0;
+        int heroLife = 3;
 
         Random randGen = new Random();
 
@@ -754,6 +755,22 @@ namespace Berzerk_2._0
             if (heroRec.IntersectsWith(wallLeft1))
             {
                 xHero++;
+                heroLife--;
+
+            }
+
+            #endregion
+            #region Character Death
+            if (heroLife == 2)
+            {
+
+            }
+            else if (heroLife == 1)
+            {
+
+            }
+            else if (heroLife == 0)
+            {
 
             }
 

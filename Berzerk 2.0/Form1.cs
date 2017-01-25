@@ -39,7 +39,7 @@ namespace Berzerk_2._0
 
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown, spaceDown;
 
-        Rectangle heroRec, doorleftRec, doorrightRec, doorupRec, doordownRec, wallLeft1, wallLeft2, wallTop1, wallTop2, wallRight1, wallRight2, wallDown1, wallDown2;
+        Rectangle heroRec, doorleftRec, doorrightRec, doorupRec, doordownRec, wallLeft1, wallLeft2, wallTop1, wallTop2, wallRight1, wallRight2, wallDown1, wallDown2, robot1Rec, robot2Rec, robot3Rec;
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -107,6 +107,11 @@ namespace Berzerk_2._0
             doorupRec = new Rectangle(265, 0, 70, 10);
             doordownRec = new Rectangle(265, 400, 70, 10);
 
+            robot1Rec = new Rectangle(xRobot1, yRobot1, 30, 30);
+            robot2Rec = new Rectangle(xRobot2, yRobot2, 30, 30);
+            robot3Rec = new Rectangle(xRobot3, yRobot3, 30, 30);
+
+
             wallLeft1 = new Rectangle(0, 0, 10, 150);
             wallLeft2 = new Rectangle(264, 0, 8, 264);
         }
@@ -146,21 +151,52 @@ namespace Berzerk_2._0
 
             #endregion
             #region Robot AI
-            if (robotAI == 1)
+            if (xRobot1 < xHero)
             {
-             
-
+                xRobot1++;
             }
+            else if (xRobot1 > xHero)
+            {
+                xRobot1--;
+            }
+            else if (yRobot1 < yHero)
+            {
+                yRobot1++;
+            }
+            else if (yRobot1 > yHero)
+            {
+                yRobot1--;
+            }
+            //Robot 2 a
+            else if (xRobot2 < xHero)
+            {
+                xRobot2++;
+            }
+            else if (xRobot2 > xHero)
+            {
+                xRobot2--;
+            }
+            else if (yRobot2 < yHero)
+            {
+                yRobot2++;
+            }
+            else if (yRobot2 > yHero)
+            {
+                yRobot2--;
+            }
+        
 
             #endregion
-            #region Map Select
+            #region Map Select/Player Spawn/Robot Spawn;
             heroRec = new Rectangle(xHero, yHero, widthHero, heightHero);
 
-            if (heroRec.IntersectsWith(doorleftRec) && robotNumber == 0)
+            if (heroRec.IntersectsWith(doorleftRec))
             {
+                int robotNumber = 0;
                 int map = randGen.Next(1, 6);
                 int heroPreset = randGen.Next(1, 5);
-            
+                robotNumber = randGen.Next(1, 4);
+
                 if (map == 1)
                 {
                     this.BackgroundImage = Properties.Resources.Map_1;
@@ -306,12 +342,167 @@ namespace Berzerk_2._0
                     xHero = xHeroPreset;
                     yHero = yHeroPreset;
                 }
+                #region Robot Spawn
+                if (map == 1)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = 390;
+                        yRobot2 = 166;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = 390;
+                        yRobot2 = 166;
+                        xRobot3 = 300;
+                        yRobot3 = 345;
+                    }
+                }
+                else if (map == 2)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = 380;
+                        yRobot2 = 165;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = 380;
+                        yRobot2 = 165;
+                        xRobot3 = 300;
+                        yRobot3 = 400;
+                    }
+
+                }
+                else if (map == 3)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = 470;
+                        yRobot2 = 225;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = 470;
+                        yRobot2 = 225;
+                        xRobot3 = 300;
+                        yRobot3 = 225;
+                    }
+                }
+                else if (map == 4)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = 300;
+                        yRobot2 = 100;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = 300;
+                        yRobot2 = 100;
+                        xRobot3 = 450;
+                        yRobot3 = 225;
+                    }
+                }
+                else if (map == 5)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = 300;
+                        yRobot2 = 275;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = 300;
+                        yRobot2 = 275;
+                        xRobot3 = 150;
+                        yRobot3 = 225;
+                    }
+                }
+                #endregion
                 Thread.Sleep(1500);
             }
-            else if (heroRec.IntersectsWith(doorrightRec) && robotNumber == 0)
+            else if (heroRec.IntersectsWith(doorrightRec))
             {
+                int robotNumber = 0;
                 map = randGen.Next(1, 6);
                 heroPreset = randGen.Next(1, 5);
+                robotNumber = randGen.Next(1, 4);
 
                 if (map == 1)
                 {
@@ -458,12 +649,167 @@ namespace Berzerk_2._0
                     xHero = xHeroPreset;
                     yHero = yHeroPreset;
                 }
+                #region Robot Spawn
+                if (map == 1)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = 390;
+                        yRobot2 = 166;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = 390;
+                        yRobot2 = 166;
+                        xRobot3 = 300;
+                        yRobot3 = 345;
+                    }
+                }
+                else if (map == 2)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = 380;
+                        yRobot2 = 165;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = 380;
+                        yRobot2 = 165;
+                        xRobot3 = 300;
+                        yRobot3 = 400;
+                    }
+
+                }
+                else if (map == 3)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = 470;
+                        yRobot2 = 225;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = 470;
+                        yRobot2 = 225;
+                        xRobot3 = 300;
+                        yRobot3 = 225;
+                    }
+                }
+                else if (map == 4)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = 300;
+                        yRobot2 = 100;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = 300;
+                        yRobot2 = 100;
+                        xRobot3 = 450;
+                        yRobot3 = 225;
+                    }
+                }
+                else if (map == 5)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = 300;
+                        yRobot2 = 275;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = 300;
+                        yRobot2 = 275;
+                        xRobot3 = 150;
+                        yRobot3 = 225;
+                    }
+                }
+                #endregion
                 Thread.Sleep(1500);
             }
-            else if (heroRec.IntersectsWith(doorupRec) && robotNumber == 0)
+            else if (heroRec.IntersectsWith(doorupRec))
             {
+                int robotNumber = 0;
                 int map = randGen.Next(1, 6);
                 int heroPreset = randGen.Next(1, 5);
+                robotNumber = randGen.Next(1, 4);
 
                 if (map == 1)
                 {
@@ -610,12 +956,167 @@ namespace Berzerk_2._0
                     xHero = xHeroPreset;
                     yHero = yHeroPreset;
                 }
+                #region Robot Spawn
+                if (map == 1)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = 390;
+                        yRobot2 = 166;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = 390;
+                        yRobot2 = 166;
+                        xRobot3 = 300;
+                        yRobot3 = 345;
+                    }
+                }
+                else if (map == 2)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = 380;
+                        yRobot2 = 165;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = 380;
+                        yRobot2 = 165;
+                        xRobot3 = 300;
+                        yRobot3 = 400;
+                    }
+
+                }
+                else if (map == 3)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = 470;
+                        yRobot2 = 225;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = 470;
+                        yRobot2 = 225;
+                        xRobot3 = 300;
+                        yRobot3 = 225;
+                    }
+                }
+                else if (map == 4)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = 300;
+                        yRobot2 = 100;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = 300;
+                        yRobot2 = 100;
+                        xRobot3 = 450;
+                        yRobot3 = 225;
+                    }
+                }
+                else if (map == 5)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = 300;
+                        yRobot2 = 275;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = 300;
+                        yRobot2 = 275;
+                        xRobot3 = 150;
+                        yRobot3 = 225;
+                    }
+                }
+                #endregion
                 Thread.Sleep(1500);
             }
-            else if (heroRec.IntersectsWith(doordownRec) && robotNumber == 0)
+            else if (heroRec.IntersectsWith(doordownRec))
             {
+                int robotNumber = 0;
                 int map = randGen.Next(1, 6);
                 int heroPreset = randGen.Next(1, 5);
+                robotNumber = randGen.Next(1, 4);
 
                 if (map == 1)
                 {
@@ -762,6 +1263,159 @@ namespace Berzerk_2._0
                     xHero = xHeroPreset;
                     yHero = yHeroPreset;
                 }
+                #region Robot Spawn
+                if (map == 1)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = 390;
+                        yRobot2 = 166;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 214;
+                        yRobot1 = 166;
+                        xRobot2 = 390;
+                        yRobot2 = 166;
+                        xRobot3 = 300;
+                        yRobot3 = 345;
+                    }
+                }
+                else if (map == 2)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = 380;
+                        yRobot2 = 165;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 240;
+                        yRobot1 = 165;
+                        xRobot2 = 380;
+                        yRobot2 = 165;
+                        xRobot3 = 300;
+                        yRobot3 = 400;
+                    }
+
+                }
+                else if (map == 3)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = 470;
+                        yRobot2 = 225;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 170;
+                        yRobot1 = 225;
+                        xRobot2 = 470;
+                        yRobot2 = 225;
+                        xRobot3 = 300;
+                        yRobot3 = 225;
+                    }
+                }
+                else if (map == 4)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = 300;
+                        yRobot2 = 100;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 200;
+                        yRobot1 = 225;
+                        xRobot2 = 300;
+                        yRobot2 = 100;
+                        xRobot3 = 450;
+                        yRobot3 = 225;
+                    }
+                }
+                else if (map == 5)
+                {
+                    if (robotNumber == 1)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = -50;
+                        yRobot2 = 1000;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 2)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = 300;
+                        yRobot2 = 275;
+                        xRobot3 = -50;
+                        yRobot3 = 1000;
+                    }
+                    else if (robotNumber == 3)
+                    {
+                        xRobot1 = 300;
+                        yRobot1 = 165;
+                        xRobot2 = 300;
+                        yRobot2 = 275;
+                        xRobot3 = 150;
+                        yRobot3 = 225;
+                    }
+                }
+                #endregion
                 Thread.Sleep(1500);
             }
             #endregion
@@ -773,143 +1427,7 @@ namespace Berzerk_2._0
             }
 
             #endregion
-            #region Robot Spawn
-            if (map == 1)
-            {
-                int robotNumber = randGen.Next(1, 4);
-
-                if (robotNumber == 1)
-                {
-                    xRobot1 = 214;
-                    yRobot1 = 166; 
-
-                }
-                else if (robotNumber == 2)
-                {
-                    xRobot1 = 214;
-                    yRobot1 = 166;
-                    xRobot2 = 390;
-                    yRobot2 = 166;
-                }
-                else if (robotNumber == 3)
-                {
-                    xRobot1 = 214;
-                    yRobot1 = 166;
-                    xRobot2 = 390;
-                    yRobot2 = 166;
-                    xRobot3 = 300;
-                    yRobot3 = 345;
-
-                }
-
-            }
-            else if (map == 2)
-            {
-                int robotNumber = randGen.Next(1, 4);
-
-                if (robotNumber == 1)
-                {
-                    xRobot1 = 240;
-                    yRobot1 = 165;
-                }
-                else if (robotNumber == 2)
-                {
-                    xRobot1 = 240;
-                    yRobot1 = 165;
-                    xRobot2 = 380;
-                    yRobot2 = 165;
-                }
-                else if (robotNumber == 3)
-                {
-                    xRobot1 = 240;
-                    yRobot1 = 165;
-                    xRobot2 = 380;
-                    yRobot2 = 165;
-                    xRobot3 = 300;
-                    yRobot3 = 400;
-                }
-
-            }
-            else if (map == 3)
-            {
-                int robotNumber = randGen.Next(1, 4);
-
-                if (robotNumber == 1)
-                {
-                    xRobot1 = 170;
-                    yRobot1 = 225;
-                }
-                else if (robotNumber == 2)
-                {
-                    xRobot1 = 170;
-                    yRobot1 = 225;
-                    xRobot2 = 470;
-                    yRobot2 = 225;
-                }
-                else if (robotNumber == 3)
-                {
-                    xRobot1 = 170;
-                    yRobot1 = 225;
-                    xRobot2 = 470;
-                    yRobot2 = 225;
-                    xRobot3 = 300;
-                    yRobot3 = 225;
-                }
-            }
-            else if (map == 4)
-            {
-                int robotNumber = randGen.Next(1, 4);
-
-                if (robotNumber == 1)
-                {
-                    xRobot1 = 200;
-                    yRobot1 = 225;
-                }
-                else if (robotNumber == 2)
-                {
-                    xRobot1 = 200;
-                    yRobot1 = 225;
-                    xRobot2 = 300;
-                    yRobot2 = 100;
-                }
-                else if (robotNumber == 3) ;
-                {
-                    xRobot1 = 200;
-                    yRobot1 = 225;
-                    xRobot2 = 300;
-                    yRobot2 = 100;
-                    xRobot3 = 450;
-                    yRobot3 = 225;
-                }
-            }
-            else if (map == 5)
-            {
-                int robotNumber = randGen.Next(1, 4);
-
-                if (robotNumber == 1)
-                {
-                    xRobot1 = 300;
-                    yRobot1 = 165;
-                }
-                else if (robotNumber == 2)
-                {
-                    xRobot1 = 300;
-                    yRobot1 = 165;
-                    xRobot2 = 300;
-                    yRobot2 = 275;
-                }
-                else if (robotNumber == 3)
-                {
-                    xRobot1 = 300;
-                    yRobot1 = 165;
-                    xRobot2 = 300;
-                    yRobot2 = 275;
-                    xRobot3 = 150;
-                    yRobot3 = 225;
-                }
-
-            }
-            #endregion
+    
             Refresh();
             }
        

@@ -15,9 +15,10 @@ namespace Berzerk_2._0
     {
         int xHero = 100;
         int yHero = 200;
-        int speedHero = 4;
+        int speedHero = 3;
         int widthHero = 10;
         int heightHero = 20;
+        int heroDirection = 0;
         int robotAI = 0;
         int map = 0;
         int robotNumber = 0;
@@ -27,6 +28,9 @@ namespace Berzerk_2._0
         int yRobot2 = -500;
         int xRobot3 = -50;
         int yRobot3 = -500;
+        int robot1Speed = 0;
+        int robot2Speed = 0;
+        int robot3Speed = 4;
         int heroPreset = 0;
         int xHeroPreset = 0;
         int yHeroPreset = 0;
@@ -35,6 +39,8 @@ namespace Berzerk_2._0
         int xrobotPreset = 0;
         int xLaser = 0;
         int yLaser = 0;
+        int laserSpeed = 5;
+        int laserDirection = 0;
         Random randGen = new Random();
 
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown, spaceDown;
@@ -167,24 +173,42 @@ namespace Berzerk_2._0
             {
                 yRobot1--;
             }
-            //Robot 2 a
-            else if (xRobot2 < xHero)
+      
+            //Robot 2
+            if (xRobot2 < xHero)
             {
-                xRobot2++;
+                xRobot2 = xRobot2 + 2;
             }
             else if (xRobot2 > xHero)
             {
-                xRobot2--;
+                xRobot2 = xRobot2 - 2;
             }
             else if (yRobot2 < yHero)
             {
-                yRobot2++;
+                yRobot2 = yRobot2 + 2;
             }
             else if (yRobot2 > yHero)
             {
-                yRobot2--;
+                yRobot2= yRobot2 - 2;
             }
-        
+
+            if (xRobot3 < xHero)
+            {
+                xRobot3 = xRobot3 + robot3Speed;
+            }
+            else if (xRobot3 > xHero)
+            {
+                xRobot3 = xRobot3 - robot3Speed;
+            }
+            else if (yRobot3 < yHero)
+            {
+                yRobot3 = yRobot3 + robot3Speed;
+            }
+            else if (yRobot3 > yHero)
+            {
+                yRobot3 = yRobot3 - robot3Speed;
+            }
+
 
             #endregion
             #region Map Select/Player Spawn/Robot Spawn;
@@ -1443,42 +1467,38 @@ namespace Berzerk_2._0
             e.Graphics.DrawImage(Properties.Resources.robot, xRobot3, yRobot3, 30, 30);
             e.Graphics.DrawString("00000000", drawFont, blueBrush, 425, 420);
 
-            #region Character Direction
+            #region Character Direction/Character Shooting
 
             if (leftArrowDown == true)
             {
                 e.Graphics.DrawImage(Properties.Resources.LeftTest, xHero, yHero, 30, 30);
+                heroDirection = 1;
             }
 
             if (rightArrowDown == true)
             {
                 e.Graphics.DrawImage(Properties.Resources.RightTest, xHero, yHero, 30, 30);
+                heroDirection = 2;
             }
 
             if (upArrowDown == true)
             {
                 e.Graphics.DrawImage(Properties.Resources.UpTest, xHero, yHero, 30, 30);
+                heroDirection = 3;
             }
 
             if (downArrowDown == true)
             {
                 e.Graphics.DrawImage(Properties.Resources.DownTest, xHero, yHero, 30, 30);
+                heroDirection = 4;
             }
-            #endregion
-            #region Player Shooting
-            if (spaceDown == true)
+            if (leftArrowDown && spaceDown == true)
             {
-                xLaser = xHero;
-                yLaser = yHero;
-                while (yLaser < 1000)
-                {
-                    yLaser++;
-                    e.Graphics.DrawImage(Properties.Resources.laserUp, xLaser, yLaser, 5, 5);
-                }
-                
+                e.Graphics.DrawImage(Properties.Resources.LeftTest, xHero, yHero, 30, 30);
+
             }
-            
             #endregion
+           
 
         }
     }

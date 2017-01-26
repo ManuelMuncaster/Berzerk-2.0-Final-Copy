@@ -160,4 +160,34 @@
   <data name="robot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\robot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Berzerk_2_0_Theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Berzerk 2.0 Theme.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="death" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gameover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maxresdefault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="laser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\laser.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Map_1_Final" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Map 1 Final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map_2_Final" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Map 2 Final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map_3_Final" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Map 3 Final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map_4_Final" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Map 4 Final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map_5_Final" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Map 5 Final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="robotdeath" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\robotdeath.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

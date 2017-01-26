@@ -105,9 +105,6 @@
     <None Include="Resources\Berzerk 2.0 Screen Shots.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Map 1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Map 2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +127,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\laserUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14572695_10208882709718083_387572749_o.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxresdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map 1 Final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map 2 Final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map 3 Final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map 4 Final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map 5 Final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\death.WAV" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laser.WAV" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\robotdeath.WAV" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Berzerk 2.0 Theme.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

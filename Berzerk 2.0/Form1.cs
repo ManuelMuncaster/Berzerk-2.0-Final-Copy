@@ -3302,11 +3302,6 @@ namespace Berzerk_2._0
             e.Graphics.DrawImage(Properties.Resources.robot, xRobot3, yRobot3, 30, 30);
             e.Graphics.DrawString(score2, drawFont, blueBrush, 425, 420); 
 
-            e.Graphics.FillRectangle(blueBrush, laserRec);
-            e.Graphics.FillRectangle(blueBrush, robot1HitRec);
-            e.Graphics.FillRectangle(blueBrush, robot2HitRec);
-            e.Graphics.FillRectangle(blueBrush, robot3HitRec);
-
             #region Character Direction/Character Shooting
 
             if (leftArrowDown == true)
